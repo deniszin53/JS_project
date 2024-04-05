@@ -1,0 +1,57 @@
+.shop__container {
+  padding: 0;
+}
+
+.shop__title {
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 130%;
+}
+
+.shop__block_2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop__filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.input__block {
+  display: flex;
+  position: relative;
+}
+.input__block button {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  height: 19px;
+  width: 19px;
+  background-color: #fff;
+}
+
+.shop__input {
+  height: 35px;
+  width: 222px;
+  display: block;
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 40px;
+}
+
+.shop__select {
+  display: block;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  width: 261px;
+  height: 53px;
+  margin-bottom: 20px;
+}
+
+.shop__items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=page_shop.css.map */

@@ -1,0 +1,94 @@
+.main__account {
+}
+.account {
+}
+.account__container {
+    padding: 128px 0px 147px 0px;
+}
+.account__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 130%;
+    margin-bottom: 64px;
+
+}
+.account__block {
+    margin: 0 auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.account__buttons {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color:  #efefef;
+    margin-bottom: 126px;
+}
+.account__button {
+    padding: 12px 87px;
+    font-size: 20px;
+    line-height: 130%;
+    border-radius: 8px;
+    
+}
+.account__button:hover {
+    background-color: #d8d8d8;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+}
+.account__button:focus {
+    background-color: #fff;
+}
+.account__input {
+    width: 500px;
+    height: 39px;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 46px;
+}
+.account__checkbox {
+    font-size: 16px;
+    line-height: 169%;
+    width: 133px;
+    height: 27px;
+    align-self: flex-start;
+    margin-bottom: 70px;
+}
+
+.account__sign__up {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    padding: 16px 219px;
+    border: 2px solid #0a0a0a;
+    border-radius: 4px;
+    background-color: #0a0a0a;
+    margin-bottom: 13px;
+}
+.account__sign__up:hover {
+    background-color: #fff;
+    color: black;
+    transition-duration: 0.2s;
+}
+.account__block_login{
+    
+}
+.account__block_reg {
+    display: none;
+}
+.account__input {
+}
+.account__input_reg {
+}
+.account__input_regText {
+}
+.account__sign__up {
+}
+.account__forget {
+}
+.account__forget_link {
+}

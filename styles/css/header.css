@@ -1,0 +1,83 @@
+.header__container {
+  padding: 65px 0px 15px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.header__logo a {
+  font-family: "Allerta Stencil", sans-serif;
+  text-decoration: none;
+  color: #a18a68;
+  font-size: 35px;
+  line-height: 116%;
+}
+.header__logo span {
+  color: #000;
+}
+
+.header__body {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu {
+  position: relative;
+}
+
+.header__menu::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  width: 17px;
+  height: 1px;
+  background-color: #707070;
+  transform: rotate(90deg);
+}
+
+.header__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.header__link {
+  margin-right: 64px;
+  color: #000;
+  text-decoration: none;
+}
+
+.header__link:hover {
+  color: #a18a68;
+  transition-duration: 0.3s;
+}
+
+.header__icons:hover {
+  color: #a18a68;
+  transition-duration: 0.3s;
+}
+
+.icons__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .icons__list {
+    gap: 20px;
+  }
+  .header__link {
+    margin-right: 24px;
+  }
+  .header__menu::after {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

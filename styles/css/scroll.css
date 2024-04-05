@@ -1,0 +1,64 @@
+.scroll__container {
+  position: relative;
+  padding: 26px 0px 24px 0px;
+}
+
+.scroll__body {
+  position: absolute;
+  top: 250px;
+  left: 180px;
+}
+
+.scroll__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 130%;
+  color: white;
+}
+
+.scroll__price {
+  margin-bottom: 48px;
+  font-size: 26px;
+  line-height: 135%;
+  color: white;
+}
+
+.scroll__button {
+  padding: 14px 32px;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 215px;
+  background-color: #d8d8d8;
+}
+
+.scroll__button:hover {
+  color: black;
+  border: 2px solid black;
+  transition-duration: 0.2s;
+}
+
+.sec__slide {
+  display: none;
+}
+
+.third__slide {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .scroll__body {
+    top: 120px;
+    left: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .main__scroll {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=scroll.css.map */

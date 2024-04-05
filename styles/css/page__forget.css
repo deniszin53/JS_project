@@ -1,0 +1,52 @@
+.forget__container {
+  padding: 130px 0px 130px 0px;
+}
+
+.forget__block {
+  max-width: 561px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forget__title {
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 130%;
+  margin-bottom: 40px;
+}
+
+.forget__text {
+  margin-bottom: 70px;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+}
+
+.forget__input {
+  width: 500px;
+  height: 39px;
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 46px;
+}
+
+.forget__button {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  padding: 16px 180px;
+  border: 2px solid #0a0a0a;
+  border-radius: 4px;
+  background-color: #0a0a0a;
+  margin-bottom: 13px;
+}
+
+.forget__button:hover {
+  background-color: #fff;
+  color: black;
+  transition-duration: 0.2s;
+}
+
+/*# sourceMappingURL=page__forget.css.map */

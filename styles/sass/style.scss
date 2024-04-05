@@ -1,0 +1,58 @@
+@import url(./header.css);
+@import url(./scroll.css);
+@import url(./shop.css);
+@import url(./footer.css);
+@import url(./page_shop.css);
+@import url(./zero.css);
+@import url(./page__log.css);
+@import url(./page__forget.css);
+body {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main{
+  flex: 1 1 auto;
+  
+}
+.container {
+    max-width: 1248px;
+    margin: 0 auto;
+}
+
+@media (min-width: 376px) {
+    .container {
+      max-width: 340px;
+    }
+  }
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  }
