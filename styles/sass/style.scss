@@ -10,15 +10,30 @@ body {
     font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
+    position: relative;
 }
 .wrapper{
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  
 }
+
 .main{
   flex: 1 1 auto;
   
+}
+.btn__top {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 50px;
+  right: 200px;
+  z-index: 3;
+  background-color: grey;
+  color: #fff;
+  font-size: 32px;
 }
 .container {
     max-width: 1248px;
