@@ -1,0 +1,42 @@
+export const catalog = [{
+    name:'Lira Earrings',
+    price:20,
+    img:'./img/shop/Img 01.png',
+    material:'metal',
+    weight:'0.3kg',
+},
+{
+    name:'Hal Earrings',
+    price:20,
+    img:'./img/shop/Img 02.png',
+    material:'metal',
+    weight:'0.3kg',
+},
+{
+    name:'Kaede Hair Pin Set Of 3 ',
+    price:30,
+    img:'./img/shop/Img 03.png',
+    material:'metal',
+    weight:'0.3kg',
+},
+{
+    name:'Hair Pin Set of 3',
+    price:30,
+    img:'./img/shop/Img 04.png',
+    material:'metal',
+    weight:'0.3kg',
+},
+{
+    name:'Plaine Necklace',
+    price:19,
+    img:'./img/shop/Img 05.png',
+    material:'metal',
+    weight:'0.3kg',
+},
+{
+    name:'Yuki Hair Pin Set of 3',
+    price:29,
+    img:'./img/shop/Img 06.png',
+    material:'metal',
+    weight:'0.3kg',
+}];

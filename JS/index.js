@@ -1,9 +1,9 @@
 const btnTop = document.querySelector('.btn__top');
 btnTop.addEventListener('click', () => {
     window.scroll({
-        top:0,
+        top: 0,
         left: 0,
-        behavior:'smooth'
+        behavior: 'smooth'
     });
 })
 
@@ -17,4 +17,5 @@ btnBurger.addEventListener('click', () => {
 x.addEventListener('click', () => {
     menuMobile.style.display = 'none';
     x.style.display = 'none';
-})
+});
+
