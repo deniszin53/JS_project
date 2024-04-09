@@ -31,7 +31,7 @@
 
 .shop__block {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 0px -20px;
 }
@@ -88,6 +88,26 @@
 @media (max-width: 992px) {
   .main__shop {
     padding: 64px 10px 30px 10px;
+  }
+}
+@media (max-width: 576px) {
+  .shop__header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shop__title {
+    font-size: 24px;
+  }
+  .item:hover .item__photo {
+    opacity: 1;
+  }
+  .shop__item {
+    width: 136px;
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+  .item__links {
+    display: none;
   }
 }
 

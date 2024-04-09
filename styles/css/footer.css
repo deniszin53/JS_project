@@ -69,5 +69,35 @@
     width: 150px;
   }
 }
+@media (max-width: 576px) {
+  .footer__contacts {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer__contact {
+    text-align: center;
+  }
+  .footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 58px;
+  }
+  .footer__mail {
+    width: 330px;
+    gap: 40px;
+  }
+  .footer__input {
+    width: 250px;
+  }
+  .footer__block {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .footer__privacy {
+    font-size: 15px;
+  }
+}
 
 /*# sourceMappingURL=footer.css.map */
