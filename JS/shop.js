@@ -85,18 +85,13 @@ const viewItems = (element) => {
     links.appendChild(linkCart);
     links.appendChild(linkEye);
     links.appendChild(linkHeart);
-    actual_catolog.appendChild(item);
+    actualСatolog.appendChild(item);
 }
-
-console.log(catalog);
-const actual_catolog = document.getElementById("catalog");
+const actualСatolog = document.getElementById("catalog");
 const filter = document.getElementById('filter_select');
 const onFilterChange = () => {
- 
-    actual_catolog.innerHTML = '';
-
+    actualСatolog.innerHTML = '';
     const filterValue = filter.value;
-
     catalog.forEach((element) => {
         if (filterValue === 'View all' || element.material.toLowerCase() === filterValue.toLowerCase()) {
             viewItems(element);

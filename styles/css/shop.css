@@ -50,6 +50,8 @@
 .item:hover .item__links {
   display: flex;
   transition-duration: 0.3s;
+  justify-content: center;
+  align-items: center;
 }
 
 .item__links {
@@ -63,8 +65,8 @@
 }
 
 .item__links_shop {
-  top: 110px;
-  left: 110px;
+  top: 170px;
+  left: 144px;
 }
 
 .item__photo {
