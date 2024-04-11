@@ -1,0 +1,42 @@
+.cart__title {
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 130%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cart__container {
+  padding: 40px 0px;
+}
+
+.cart__empty {
+  display: none;
+}
+
+.cart__returnShop {
+  display: none;
+}
+
+.cart__block {
+  display: flex;
+  justify-content: center;
+}
+
+.cart__item {
+  display: flex;
+}
+
+.cart__item_photo {
+  margin-right: 30px;
+}
+
+.cart__item_title {
+  margin-right: 530px;
+}
+
+.cart__item_price {
+  margin-right: 30px;
+}
+
+/*# sourceMappingURL=cart.css.map */

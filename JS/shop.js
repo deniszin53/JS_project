@@ -102,3 +102,5 @@ const onFilterChange = () => {
 filter.addEventListener('change', onFilterChange);
 
 onFilterChange();
+
+
