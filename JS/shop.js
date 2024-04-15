@@ -89,18 +89,41 @@ const viewItems = (element) => {
 }
 const actualСatolog = document.getElementById("catalog");
 const filter = document.getElementById('filter_select');
+const searchBut = document.getElementById('searchButton');
+const searchInp = document.getElementById('searchInput');
+let catalogArray = [];
 const onFilterChange = () => {
+    catalogArray.splice(0);
     actualСatolog.innerHTML = '';
     const filterValue = filter.value;
     catalog.forEach((element) => {
         if (filterValue === 'View all' || element.material.toLowerCase() === filterValue.toLowerCase()) {
-            viewItems(element);
+            catalogArray.push(element);
+            catalogArray.forEach((element)=>{
+                onSearch();
+            })
+            
         }
     });
+    
 };
 
 filter.addEventListener('change', onFilterChange);
+const onSearch = () => {
+    actualСatolog.innerHTML = '';
+    const searchValue = searchInp.value.toLowerCase();
+    catalogArray.forEach((element) => {
+        
+        if (element.name.toLowerCase().includes(searchValue) || searchValue === ''){
+            viewItems(element);
+        }
+    })
+}
+
+searchBut.addEventListener('click',onSearch)
+
 
 onFilterChange();
+
 
 
