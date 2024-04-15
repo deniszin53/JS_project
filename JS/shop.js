@@ -94,7 +94,6 @@ const searchInp = document.getElementById('searchInput');
 let catalogArray = [];
 const onFilterChange = () => {
     catalogArray.splice(0);
-    actualСatolog.innerHTML = '';
     const filterValue = filter.value;
     catalog.forEach((element) => {
         if (filterValue === 'View all' || element.material.toLowerCase() === filterValue.toLowerCase()) {
@@ -102,10 +101,8 @@ const onFilterChange = () => {
             catalogArray.forEach((element)=>{
                 onSearch();
             })
-            
         }
-    });
-    
+    });   
 };
 
 filter.addEventListener('change', onFilterChange);
@@ -113,17 +110,13 @@ const onSearch = () => {
     actualСatolog.innerHTML = '';
     const searchValue = searchInp.value.toLowerCase().trim();
     catalogArray.forEach((element) => {
-        
         if (element.name.toLowerCase().trim().includes(searchValue) || searchValue === ''){
             viewItems(element);
         }
     })
 }
-
 searchBut.addEventListener('click',onSearch);
 searchInp.addEventListener('keyup',onSearch);
-
-
 onFilterChange();
 
 
