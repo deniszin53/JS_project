@@ -111,16 +111,17 @@ const onFilterChange = () => {
 filter.addEventListener('change', onFilterChange);
 const onSearch = () => {
     actualСatolog.innerHTML = '';
-    const searchValue = searchInp.value.toLowerCase();
+    const searchValue = searchInp.value.toLowerCase().trim();
     catalogArray.forEach((element) => {
         
-        if (element.name.toLowerCase().includes(searchValue) || searchValue === ''){
+        if (element.name.toLowerCase().trim().includes(searchValue) || searchValue === ''){
             viewItems(element);
         }
     })
 }
 
-searchBut.addEventListener('click',onSearch)
+searchBut.addEventListener('click',onSearch);
+searchInp.addEventListener('keyup',onSearch);
 
 
 onFilterChange();
