@@ -10,31 +10,46 @@ const viewItem = (element) => {
     const litImage1 = document.createElement('div');
     litImage1.classList.add('page-item__little-image');
     const img1 = document.createElement('img');
-    img1.src = '.'+element.img;
     litImage1.append(img1);
     litImages.append(litImage1);
     const litImage2 = document.createElement('div');
     litImage2.classList.add('page-item__little-image');
     const img2 = document.createElement('img');
-    img2.src = '.'+element.img;
     litImage2.append(img2);
     litImages.append(litImage2);
     const litImage3 = document.createElement('div');
     litImage3.classList.add('page-item__little-image');
     const img3 = document.createElement('img');
-    img3.src = '.'+element.img;
     litImage3.append(img3);
     litImages.append(litImage3);
     const litImage4 = document.createElement('div');
     litImage4.classList.add('page-item__little-image');
     const img4 = document.createElement('img');
-    img4.src = '.'+element.img;
     litImage4.append(img4);
     litImages.append(litImage4);
     const itemImage = document.createElement('div');
     const bigImg = document.createElement('img');
-    bigImg.src = '.'+element.img;
     itemImage.append(bigImg);
+    img1.src = element.img;
+    img1.onerror = () =>{
+        img1.src = '.' + element.img;
+    }
+    img2.src = element.img;
+    img2.onerror = () =>{
+        img2.src = '.' + element.img;
+    }
+    img3.src = element.img;
+    img3.onerror = () =>{
+        img3.src = '.' + element.img;
+    }
+    img4.src = element.img;
+    img4.onerror = () =>{
+        img4.src = '.' + element.img;
+    }
+    bigImg.src = element.img;
+    bigImg.onerror = () =>{
+        bigImg.src = '.' + element.img;
+    }
     itemImage.classList.add('page-item__image');
     itemImages.append(itemImage);
     const itemBody = document.createElement('div');
@@ -50,23 +65,23 @@ const viewItem = (element) => {
     itemBody.append(itemPrice);
     const itemDiscription = document.createElement('div');
     itemDiscription.classList.add('page-item__item-dicription');
-    itemDiscription.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis.' ;
+    itemDiscription.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis.';
     itemBody.append(itemDiscription);
     const itemBtn = document.createElement('button');
     itemBtn.classList.add('page-item__item-button');
     itemBtn.textContent = 'ADD TO CART';
     itemBody.append(itemBtn);
     itemBtn.addEventListener('click', (event) => {
-        
+
         let array = JSON.parse(localStorage.getItem('corz'));
         console.log(array);
         console.log(element);
-        array.push({element});
+        array.push({ element });
         let JSONcorz = JSON.stringify(array);
-        localStorage.setItem('corz',JSONcorz);
+        localStorage.setItem('corz', JSONcorz);
     })
 }
 document.addEventListener('DOMContentLoaded', () => {
     viewItem(JSON.parse(localStorage.getItem('item')));
-    
+
 })

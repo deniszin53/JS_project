@@ -128,19 +128,19 @@ x.addEventListener('click', () => {
 const carts = document.querySelectorAll('.item_cart');
 let corzArray = [];
 let itemArray = [];
-// for(let cart of carts){
-// cart.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     catalog.forEach((element) => {
-//         if(cart.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
-//             corzArray.push({element});
-//             console.log(element);
-//             let JSONcorzArray = JSON.stringify(corzArray);
-//             localStorage.setItem('corz',JSONcorzArray);
-//         }
-//     })
-// });
-// };
+for(let cart of carts){
+cart.addEventListener('click', (event) => {
+    event.preventDefault();
+    catalog.forEach((element) => {
+        if(cart.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+            corzArray.push(element);
+            console.log(element);
+            let JSONcorzArray = JSON.stringify(corzArray);
+            localStorage.setItem('corz',JSONcorzArray);
+        }
+    })
+});
+};
 catalog.forEach((element)=>{
     viewItems(element);
 })
