@@ -108,7 +108,7 @@ const priceFilterChange = () => {
 
     
 }
-let catalogArray = [];
+let catalogArray = [] ;
 let catalogArrayPrice = [];
 const onFilterChange = () => {
     catalogArray.splice(0);
