@@ -14,9 +14,28 @@
 }
 .cart__empty {
     display: none;
+    p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 33px;
+        line-height: 130%;
+        margin-bottom: 64px;
+    }
 }
 .cart__returnShop {
     display: none;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: black;
+    border: 1.5px solid black;
+    color: white;
+    font-size: 24px;
+    width: 200px;
+}
+.cart__returnShop:hover{
+    color: black;
+    background-color: #fff;
+    transition-duration: 0.3s;
 }
 .cart__block {
     display: flex;

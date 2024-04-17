@@ -80,12 +80,18 @@ const viewItems = (element) => {
     });
     linkCart.appendChild(imgCart);
     const linkEye = document.createElement('a');
-    linkEye.href = '';
+    linkEye.href = './pages/item.html';
     linkEye.classList.add('item__link');
     const imgEye = document.createElement('img');
     imgEye.src = './icons/shop/eye-svgrepo-com 1.svg';
     imgEye.alt = '';
     linkEye.appendChild(imgEye);
+    // linkEye.addEventListener('click', (event) => {
+    //     if(linkEye.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+    //         let JSONitem = JSON.stringify(element);
+    //         localStorage.setItem('item', JSONitem);
+    //     }
+    // });
     const linkHeart = document.createElement('a');
     linkHeart.href = '';
     linkHeart.classList.add('item__link');
@@ -121,6 +127,7 @@ x.addEventListener('click', () => {
 
 const carts = document.querySelectorAll('.item_cart');
 let corzArray = [];
+let itemArray = [];
 for(let cart of carts){
 cart.addEventListener('click', (event) => {
     event.preventDefault();

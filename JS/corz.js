@@ -1,3 +1,7 @@
+const empty = document.querySelector('.cart__empty');
+const btnEmpty = document.querySelector('.cart__returnShop');
+const blockTotal = document.querySelector('.cart__total');
+const blockCoupon = document.querySelector('.cart__coupon');
 document.addEventListener('DOMContentLoaded', () => {
     let actualCorzStr = localStorage.getItem('corz');
     const priceCount = () => {
@@ -14,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
             subtotal.innerHTML = '00';
             total.innerHTML = '00';
             discount.innerHTML = '00';
+            btnEmpty.style.display = 'flex';
+            empty.style.display = 'flex';
+            blockTotal.style.display = 'none';
+            blockCoupon.style.display = 'none';
         }
         else {
             actualCorz.forEach((cartItem) => {
@@ -84,11 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 })
                 itemElem.remove();
+                
                 priceCount();
+                
             });
         });
-    };
+    }
+    
     priceCount();
+    
 });
 
 
