@@ -20,7 +20,6 @@ const viewItem = (element) => {
     litImage2.append(img2);
     litImages.append(litImage2);
     const litImage3 = document.createElement('div');
-    
     litImage3.classList.add('page-item__little-image');
     const img3 = document.createElement('img');
     img3.src = '.'+element.img;
@@ -57,8 +56,15 @@ const viewItem = (element) => {
     itemBtn.classList.add('page-item__item-button');
     itemBtn.textContent = 'ADD TO CART';
     itemBody.append(itemBtn);
-    console.log(element.img);
-    
+    itemBtn.addEventListener('click', (event) => {
+        
+        let array = JSON.parse(localStorage.getItem('corz'));
+        console.log(array);
+        console.log(element);
+        array.push({element});
+        let JSONcorz = JSON.stringify(array);
+        localStorage.setItem('corz',JSONcorz);
+    })
 }
 document.addEventListener('DOMContentLoaded', () => {
     viewItem(JSON.parse(localStorage.getItem('item')));
