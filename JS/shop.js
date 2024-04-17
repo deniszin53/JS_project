@@ -91,7 +91,25 @@ const actualСatolog = document.getElementById("catalog");
 const filter = document.getElementById('filter_select');
 const searchBut = document.getElementById('searchButton');
 const searchInp = document.getElementById('searchInput');
+const range1 = document.getElementById('customRange1');
+const range2 = document.getElementById('customRange2');
+const range1Visuality = document.getElementById('minPrice');
+const range2Visuality = document.getElementById('maxPrice');
+const priceFilterChange = () => {
+    let priceFilterMin = Number(range1.value);
+    let priceFilterMax = Number(range2.value);
+    range1Visuality.innerHTML='от ' + priceFilterMin + ' $';
+    range2Visuality.innerHTML='до ' + priceFilterMax + ' $';
+    catalogArrayPrice.forEach((element)=>{
+        if (element.price>=priceFilterMin && element.price<=priceFilterMax){
+            viewItems(element);
+        }
+    })
+
+    
+}
 let catalogArray = [];
+let catalogArrayPrice = [];
 const onFilterChange = () => {
     catalogArray.splice(0);
     const filterValue = filter.value;
@@ -106,12 +124,16 @@ const onFilterChange = () => {
 };
 
 filter.addEventListener('change', onFilterChange);
+range1.addEventListener('change',onFilterChange);
+range2.addEventListener('change',onFilterChange);
 const onSearch = () => {
     actualСatolog.innerHTML = '';
     const searchValue = searchInp.value.toLowerCase().trim();
     catalogArray.forEach((element) => {
+        catalogArrayPrice.splice(0);
         if (element.name.toLowerCase().trim().includes(searchValue) || searchValue === ''){
-            viewItems(element);
+            catalogArrayPrice.push(element);
+            priceFilterChange();
         }
     })
 }
