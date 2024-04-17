@@ -86,12 +86,12 @@ const viewItems = (element) => {
     imgEye.src = './icons/shop/eye-svgrepo-com 1.svg';
     imgEye.alt = '';
     linkEye.appendChild(imgEye);
-    // linkEye.addEventListener('click', (event) => {
-    //     if(linkEye.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
-    //         let JSONitem = JSON.stringify(element);
-    //         localStorage.setItem('item', JSONitem);
-    //     }
-    // });
+    linkEye.addEventListener('click', (event) => {
+        if(linkEye.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+            let JSONitem = JSON.stringify(element);
+            localStorage.setItem('item', JSONitem);
+        }
+    });
     const linkHeart = document.createElement('a');
     linkHeart.href = '';
     linkHeart.classList.add('item__link');
