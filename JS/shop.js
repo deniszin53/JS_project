@@ -40,6 +40,13 @@ const catalog = [{
     material: 'silver',
     weight: '0.3kg',
 }];
+let corzArray;
+if (localStorage.getItem('corz')!==null){
+    corzArray = JSON.parse(localStorage.getItem('corz'));
+}
+else {
+    corzArray=[];
+};
 const viewItems = (element) => {
     const item = document.createElement('div');
     item.classList.add('shop__item', 'item');
@@ -64,6 +71,18 @@ const viewItems = (element) => {
     const linkCart = document.createElement('a');
     linkCart.href = '';
     linkCart.classList.add('item__link');
+    linkCart.addEventListener('click', (event) => {
+        event.preventDefault();
+        catalog.forEach((element) => {
+            if(linkCart.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+
+                corzArray.push({element});
+                console.log(element);
+                let JSONcorzArray = JSON.stringify(corzArray);
+                localStorage.setItem('corz',JSONcorzArray);
+            }
+        })
+    });
     const imgCart = document.createElement('img');
     imgCart.src = '../icons/shop/corz.svg';
     imgCart.alt = '';
