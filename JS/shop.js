@@ -41,12 +41,60 @@ const catalog = [{
     weight: '0.3kg',
 }];
 let corzArray;
-if (localStorage.getItem('corz')!==null){
+if (localStorage.getItem('corz') !== null) {
     corzArray = JSON.parse(localStorage.getItem('corz'));
 }
 else {
-    corzArray=[];
+    corzArray = [];
 };
+const actualСatolog = document.getElementById("catalog");
+const filter = document.getElementById('filter_select');
+const searchBut = document.getElementById('searchButton');
+const searchInp = document.getElementById('searchInput');
+const range1 = document.getElementById('customRange1');
+const range2 = document.getElementById('customRange2');
+const range1Visuality = document.getElementById('minPrice');
+const range2Visuality = document.getElementById('maxPrice');
+let catalogArray = [];
+let catalogArrayPrice = [];
+const onFilterChange = () => {
+    catalogArray.splice(0);
+    const filterValue = filter.value;
+    catalog.forEach((element) => {
+        if (filterValue === 'View all' || element.material.toLowerCase() === filterValue.toLowerCase()) {
+            catalogArray.push(element);
+            catalogArray.forEach((element) => {
+                onSearch();
+            })
+        }
+    });
+};
+
+filter.addEventListener('change', onFilterChange);
+range1.addEventListener('change', onFilterChange);
+range2.addEventListener('change', onFilterChange);
+const onSearch = () => {
+    actualСatolog.innerHTML = '';
+    const searchValue = searchInp.value.toLowerCase().trim();
+    catalogArray.forEach((element) => {
+        catalogArrayPrice.splice(0);
+        if (element.name.toLowerCase().trim().includes(searchValue) || searchValue === '') {
+            catalogArrayPrice.push(element);
+            priceFilterChange(element);
+        }
+    })
+};
+
+const priceFilterChange = (element) => {
+    let priceFilterMin = Number(range1.value);
+    let priceFilterMax = Number(range2.value);
+    range1Visuality.innerHTML = 'от ' + priceFilterMin + ' $';
+    range2Visuality.innerHTML = 'до ' + priceFilterMax + ' $';
+    if (element.price >= priceFilterMin && element.price <= priceFilterMax) {
+        viewItems(element);
+    }
+}
+
 const viewItems = (element) => {
     const item = document.createElement('div');
     item.classList.add('shop__item', 'item');
@@ -74,12 +122,12 @@ const viewItems = (element) => {
     linkCart.addEventListener('click', (event) => {
         event.preventDefault();
         catalog.forEach((element) => {
-            if(linkCart.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+            if (linkCart.parentElement.previousElementSibling.previousElementSibling.textContent === element.name) {
 
-                corzArray.push({element});
+                corzArray.push({ element });
                 console.log(element);
                 let JSONcorzArray = JSON.stringify(corzArray);
-                localStorage.setItem('corz',JSONcorzArray);
+                localStorage.setItem('corz', JSONcorzArray);
             }
         })
     });
@@ -94,7 +142,7 @@ const viewItems = (element) => {
     imgEye.src = '../icons/shop/eye-svgrepo-com 1.svg';
     imgEye.alt = '';
     linkEye.addEventListener('click', (event) => {
-        if(linkEye.parentElement.previousElementSibling.previousElementSibling.textContent===element.name){
+        if (linkEye.parentElement.previousElementSibling.previousElementSibling.textContent === element.name) {
             let JSONitem = JSON.stringify(element);
             localStorage.setItem('item', JSONitem);
         }
@@ -112,58 +160,8 @@ const viewItems = (element) => {
     links.appendChild(linkHeart);
     actualСatolog.appendChild(item);
 }
-const actualСatolog = document.getElementById("catalog");
-const filter = document.getElementById('filter_select');
-const searchBut = document.getElementById('searchButton');
-const searchInp = document.getElementById('searchInput');
-const range1 = document.getElementById('customRange1');
-const range2 = document.getElementById('customRange2');
-const range1Visuality = document.getElementById('minPrice');
-const range2Visuality = document.getElementById('maxPrice');
-const priceFilterChange = () => {
-    let priceFilterMin = Number(range1.value);
-    let priceFilterMax = Number(range2.value);
-    range1Visuality.innerHTML='от ' + priceFilterMin + ' $';
-    range2Visuality.innerHTML='до ' + priceFilterMax + ' $';
-    catalogArrayPrice.forEach((element)=>{
-        if (element.price>=priceFilterMin && element.price<=priceFilterMax){
-            viewItems(element);
-        }
-    })
-
-    
-}
-let catalogArray = [] ;
-let catalogArrayPrice = [];
-const onFilterChange = () => {
-    catalogArray.splice(0);
-    const filterValue = filter.value;
-    catalog.forEach((element) => {
-        if (filterValue === 'View all' || element.material.toLowerCase() === filterValue.toLowerCase()) {
-            catalogArray.push(element);
-            catalogArray.forEach((element)=>{
-                onSearch();
-            })
-        }
-    });   
-};
-
-filter.addEventListener('change', onFilterChange);
-range1.addEventListener('change',onFilterChange);
-range2.addEventListener('change',onFilterChange);
-const onSearch = () => {
-    actualСatolog.innerHTML = '';
-    const searchValue = searchInp.value.toLowerCase().trim();
-    catalogArray.forEach((element) => {
-        catalogArrayPrice.splice(0);
-        if (element.name.toLowerCase().trim().includes(searchValue) || searchValue === ''){
-            catalogArrayPrice.push(element);
-            priceFilterChange();
-        }
-    })
-}
-searchBut.addEventListener('click',onSearch);
-searchInp.addEventListener('keyup',onSearch);
+searchBut.addEventListener('click', onSearch);
+searchInp.addEventListener('keyup', onSearch);
 onFilterChange();
 
 
