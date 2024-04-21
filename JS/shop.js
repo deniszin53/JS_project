@@ -121,15 +121,19 @@ const viewItems = (element) => {
     linkCart.classList.add('item__link');
     linkCart.addEventListener('click', (event) => {
         event.preventDefault();
-        catalog.forEach((element) => {
-            if (linkCart.parentElement.previousElementSibling.previousElementSibling.textContent === element.name) {
-
-                corzArray.push({ element });
-                console.log(element);
-                let JSONcorzArray = JSON.stringify(corzArray);
-                localStorage.setItem('corz', JSONcorzArray);
-            }
-        })
+        const searchName = linkCart.parentElement.previousElementSibling.previousElementSibling.textContent;
+        const findCartItem = corzArray.find(item => item.element.name === searchName);
+        if (findCartItem) {
+            findCartItem.quantity++;
+        } else {
+            const newItem = {
+                element: catalog.find(item => item.name === searchName),
+                quantity: 1 
+            };
+            corzArray.push(newItem);
+        }
+        const JSONcorzArray = JSON.stringify(corzArray);
+        localStorage.setItem('corz', JSONcorzArray);
     });
     const imgCart = document.createElement('img');
     imgCart.src = '../icons/shop/corz.svg';

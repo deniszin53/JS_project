@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else {
             actualCorz.forEach((cartItem) => {
-                subTotalPrice += cartItem.element.price;
+                const quantity = cartItem.quantity;
+                subTotalPrice += cartItem.element.price*quantity;
                 if (cartItem.element.discount) {
                     discSum += cartItem.element.discount;
                 }
@@ -77,8 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
             itemTitle.innerHTML = element.name;
             const price = document.createElement('div');
             itemBody.appendChild(price);
+            const quantity = document.createElement('span');
+            quantity.classList.add('cart__item_price');
+            itemBody.appendChild(quantity);
+            quantity.innerHTML = cartItem.quantity;
             price.classList.add('cart__item_price');
-            price.innerHTML = '$' + element.price;
+            price.innerHTML = '$' + element.price*cartItem.quantity;
             const itemButton = document.createElement('button');
             itemButton.classList.add('item__delete');
             itemElem.appendChild(itemButton);
