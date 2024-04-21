@@ -79,6 +79,7 @@ const viewItem = (element) => {
         array.push({ element });
         let JSONcorz = JSON.stringify(array);
         localStorage.setItem('corz', JSONcorz);
+        
     })
 }
 document.addEventListener('DOMContentLoaded', () => {

@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
             itemBody.classList.add('cart__item_body');
             itemElem.prepend(itemBody);
             const img = document.createElement('img');
-            img.src ='.'+element.img;
-            img.onerror = () => {
-                img.src = element.img;
-            }
+            // img.src ='.'+element.img;
+            // img.onerror = () => {
+            //     img.src = element.img;
+            // }
             itemPhoto.appendChild(img);
             const itemTitle = document.createElement('div');
             itemBody.prepend(itemTitle);
@@ -78,12 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
             itemTitle.innerHTML = element.name;
             const price = document.createElement('div');
             itemBody.appendChild(price);
+            const quantityBtnMinus = document.createElement('button');
+            quantityBtnMinus.classList.add('cart__item_quantityBtnMinus');
+            quantityBtnMinus.textContent = '-';
+            itemBody.append(quantityBtnMinus);
             const quantity = document.createElement('span');
             quantity.classList.add('cart__item_price');
             itemBody.appendChild(quantity);
             quantity.innerHTML = cartItem.quantity;
             price.classList.add('cart__item_price');
             price.innerHTML = '$' + element.price*cartItem.quantity;
+            const quantityBtnPlus = document.createElement('button');
+            quantityBtnPlus.classList.add('cart__item_quantityBtnPlus');
+            itemBody.append(quantityBtnPlus);
+            quantityBtnPlus.textContent = '+';
             const itemButton = document.createElement('button');
             itemButton.classList.add('item__delete');
             itemElem.appendChild(itemButton);
@@ -104,6 +112,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 priceCount();
                 
             });
+            quantityBtnPlus.addEventListener('click', (event) => {
+                
+                
+                actualCorzStr = localStorage.getItem('corz');
+                console.log(actualCorz);
+                
+                actualCorz.forEach((item) => {
+                    
+                    if(itemButton.parentElement.firstChild.firstChild.textContent === item.element.name){
+                        item.quantity++;
+                        JSONarray = JSON.stringify(actualCorz);
+                        console.log(cartItem.name);
+                        localStorage.setItem('corz', JSONarray);
+                    }
+                });
+                quantity.innerHTML = cartItem.quantity;
+                price.innerHTML = '$' + element.price*cartItem.quantity;
+                priceCount();
+                
+    
+                
+            });
+            
+            quantityBtnMinus.addEventListener('click', (event) => {
+                if(cartItem.quantity===0){
+                    return;
+                }
+                
+                actualCorzStr = localStorage.getItem('corz');
+                console.log(actualCorz);
+                
+                actualCorz.forEach((item) => {
+                    
+                    if(itemButton.parentElement.firstChild.firstChild.textContent === item.element.name){
+                        item.quantity--;
+                        JSONarray = JSON.stringify(actualCorz);
+                        
+                        localStorage.setItem('corz', JSONarray);
+                    }
+                });
+                quantity.innerHTML = cartItem.quantity;
+                price.innerHTML = '$' + element.price*cartItem.quantity;
+                priceCount();
+                
+            });
+            
         });
     }
     

@@ -77,6 +77,18 @@
   color: #a18a68;
 }
 
+.cart__item_quantityBtnPlus {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+
+.cart__item_quantityBtnMinus {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
 .item__delete {
   width: 20px;
   height: 20px;
