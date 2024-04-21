@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
             itemBody.classList.add('cart__item_body');
             itemElem.prepend(itemBody);
             const img = document.createElement('img');
-            // img.src ='.'+element.img;
-            // img.onerror = () => {
-            //     img.src = element.img;
-            // }
+            img.src ='.'+element.img;
+            img.onerror = () => {
+                img.src = element.img;
+            }
             itemPhoto.appendChild(img);
             const itemTitle = document.createElement('div');
             itemBody.prepend(itemTitle);

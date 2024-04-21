@@ -1,4 +1,45 @@
-
+const catalog = [{
+    name: 'Lira Earrings',
+    price: 20,
+    img: '../img/shop/Img 01.png',
+    material: 'white gold',
+    weight: '0.3kg',
+},
+{
+    name: 'Hal Earrings',
+    price: 20,
+    img: '../img/shop/Img 02.png',
+    material: 'gold',
+    weight: '0.3kg',
+},
+{
+    name: 'Kaede Hair Pin Set Of 3 ',
+    price: 30,
+    img: '../img/shop/Img 03.png',
+    material: 'gold',
+    weight: '0.3kg',
+},
+{
+    name: 'Hair Pin Set of 3',
+    price: 30,
+    img: '../img/shop/Img 04.png',
+    material: 'white gold',
+    weight: '0.3kg',
+},
+{
+    name: 'Plaine Necklace',
+    price: 19,
+    img: '../img/shop/Img 05.png',
+    material: 'white gold',
+    weight: '0.3kg',
+},
+{
+    name: 'Yuki Hair Pin Set of 3',
+    price: 29,
+    img: '../img/shop/Img 06.png',
+    material: 'silver',
+    weight: '0.3kg',
+}];
 const block = document.querySelector('.page-item__block');
 const viewItem = (element) => {
     const itemImages = document.createElement('div');
@@ -72,15 +113,24 @@ const viewItem = (element) => {
     itemBtn.textContent = 'ADD TO CART';
     itemBody.append(itemBtn);
     itemBtn.addEventListener('click', (event) => {
-
+        event.preventDefault();
         let array = JSON.parse(localStorage.getItem('corz'));
         console.log(array);
-        console.log(element);
-        array.push({ element });
-        let JSONcorz = JSON.stringify(array);
-        localStorage.setItem('corz', JSONcorz);
-        
-    })
+        const searchName = itemBtn.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        const findCartItem = array.find(item => item.element.name === searchName);
+        if (findCartItem) {
+            findCartItem.quantity++;
+        } else {
+            const newItem = {
+                element: catalog.find(item => item.name === searchName),
+                quantity: 1 
+            };
+            array.push(newItem);
+        }
+        const JSONcorzArray = JSON.stringify(array);
+        localStorage.setItem('corz', JSONcorzArray);
+    });
+    
 }
 document.addEventListener('DOMContentLoaded', () => {
     viewItem(JSON.parse(localStorage.getItem('item')));
