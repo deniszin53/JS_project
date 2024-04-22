@@ -29,7 +29,9 @@ img {
 .main {
   flex: 1 1 auto;
 }
-
+.shop__filterPrice{
+  width:230px;
+}
 .btn__top {
   width: 30px;
   height: 30px;
