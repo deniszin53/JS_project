@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             quantityBtnMinus.addEventListener('click', (event) => {
                 if(cartItem.quantity===0){
+                    
                     return;
                 }
                 

@@ -23,6 +23,8 @@ class User {
 const regMail = document.getElementById('acRegMail');
 const regPass = document.getElementById('acRegPass');
 const regButt = document.getElementById('regButton');
+regMail.style.transition='1.5s';
+regPass.style.transition='1.5s';
 regButt.addEventListener('click', ()=>{
     if (regPass.value && regMail.value) {
         let user = new User(regMail.value , regPass.value);
@@ -33,22 +35,18 @@ regButt.addEventListener('click', ()=>{
         regMail.style.backgroundColor='red';
         setTimeout(()=>{
             regMail.style.backgroundColor='white';
-            regMail.style.transition='1.5s';
         }, 600);
     }
     else if (regMail.value) {
         regPass.style.backgroundColor='red';
         setTimeout(()=>{
             regPass.style.backgroundColor='white';
-            regPass.style.transition='1.5s';
         }, 600);
     }
     else {
         regMail.style.backgroundColor='red';
         regPass.style.backgroundColor='red';
         setTimeout(()=>{
-            regMail.style.transition='1.5s';
-            regPass.style.transition='1.5s';
             regMail.style.backgroundColor='white';
             regPass.style.backgroundColor='white';
         }, 600);
